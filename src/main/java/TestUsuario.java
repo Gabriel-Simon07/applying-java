@@ -11,5 +11,8 @@ public class TestUsuario {
         for(Usuario u : listUsuarios) {
             System.out.println(u.getNome());
         }
+
+        Mostrador mostrador = new Mostrador();
+        listUsuarios.forEach(mostrador);
     }
 }
