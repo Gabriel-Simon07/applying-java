@@ -14,5 +14,11 @@ public class TestUsuario {
 
         Mostrador mostrador = new Mostrador();
         listUsuarios.forEach(mostrador);
+
+        listUsuarios.forEach(usuario -> System.out.println(usuario.getNome()));
+
+        Validator<String> validatorCEP = s -> s.matches("[0-9]{5}-[0-9]{3}");
+        System.out.println(validatorCEP.valida("88055-009"));
     }
 }
+
