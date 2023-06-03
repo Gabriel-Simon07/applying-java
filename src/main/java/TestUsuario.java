@@ -8,10 +8,6 @@ public class TestUsuario {
 
         final var listUsuarios = Arrays.asList(usuario1, usuario2, usuario3);
 
-        for(Usuario u : listUsuarios) {
-            System.out.println(u.getNome());
-        }
-
         Mostrador mostrador = new Mostrador();
         listUsuarios.forEach(mostrador);
 
