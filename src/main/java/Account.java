@@ -1,19 +1,9 @@
 public class Account {
-    public static double DEPOSIT_FEE_PERCENTAGE = 0.02;
-    private Long id;
     private Double balance;
+    public static double DEPOSIT_FEE_PERCENTAGE = 0.02;
 
-    public Account(Long id, Double balance) {
-        this.id = id;
+    public Account(Double balance) {
         this.balance = balance;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public Double getBalance() {
@@ -26,18 +16,5 @@ public class Account {
         }
         amount -= amount * DEPOSIT_FEE_PERCENTAGE;
         balance += balance + amount;
-    }
-
-    public void withdraw(double amount) {
-        if(amount > balance) {
-            throw new IllegalArgumentException("Balance invalid");
-        }
-        balance =- amount;
-    }
-
-    public double fullWithdraw() {
-        double aux = balance;
-        balance = 0.0;
-        return  aux;
     }
 }

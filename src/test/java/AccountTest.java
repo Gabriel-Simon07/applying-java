@@ -7,7 +7,7 @@ public class AccountTest {
 
     @Test
     public void depositShouldIncreaseBalanceWhenPositiveAmount() {
-        final var account = new Account(1L, 0.0);
+        final var account = AccountFactory.createEmptyAccount();
         final var expectAmount = 196.0;
 
         account.deposit(200.0);
@@ -17,7 +17,7 @@ public class AccountTest {
 
     @Test
     public void depositShouldNotIncreaseBalanceWhenNegativeAmount() {
-        final var account = new Account(1L, 0.0);
+        final var account = AccountFactory.createEmptyAccount();
 
         assertThrows(IllegalArgumentException.class, () -> account.deposit(-200.0));
         assertEquals(0.0, account.getBalance());
