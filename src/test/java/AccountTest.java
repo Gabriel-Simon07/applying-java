@@ -20,5 +20,6 @@ public class AccountTest {
         final var account = new Account(1L, 0.0);
 
         assertThrows(IllegalArgumentException.class, () -> account.deposit(-200.0));
+        assertEquals(0.0, account.getBalance());
     }
 }
