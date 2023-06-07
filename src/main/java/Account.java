@@ -23,4 +23,11 @@ public class Account {
         balance = 0.0;
         return  aux;
     }
+
+    public void withdraw(double amount) {
+        if(amount > balance) {
+            throw new IllegalArgumentException("Balance invalid");
+        }
+        balance -= amount;
+    }
 }

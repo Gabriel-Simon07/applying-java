@@ -33,4 +33,20 @@ public class AccountTest {
 
         assertTrue(expectedBalance == account.getBalance());
     }
+
+    @Test
+    public void withdrowShouldDecreaseBalanceWhenSufficientBalance() {
+        final var account = AccountFactory.createAccount(300.0);
+        account.withdraw(200.0);
+        final var expectedBalance = 100.0;
+
+        assertEquals(expectedBalance, account.getBalance());
+    }
+
+    @Test
+    public void withdrowShouldNotDecreaseBalanceWhenSufficientBalance() {
+        final var account = AccountFactory.createAccount(300.0);
+
+        assertThrows(IllegalArgumentException.class, () -> account.withdraw(301.0));
+    }
 }
