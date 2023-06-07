@@ -17,4 +17,10 @@ public class Account {
         amount -= amount * DEPOSIT_FEE_PERCENTAGE;
         balance += balance + amount;
     }
+
+    public double fullWithdraw() {
+        double aux = balance;
+        balance = 0.0;
+        return  aux;
+    }
 }
