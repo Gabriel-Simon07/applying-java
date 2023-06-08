@@ -6,7 +6,7 @@ public class UsuarioFactory {
     }
 
     public static List<Usuario> usuariosList() {
-        final var usuario1 = createUsuario("Usuario 1", 10, false);
+        final var usuario1 = createUsuario("Usuario 1", 170, false);
         final var usuario2 = createUsuario("Usuario 2", 20, true);
         final var usuario3 = createUsuario("Usuario 3", 30, false);
 
